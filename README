@@ -1,1 +1,5 @@
 timerfd  - timerfd_create/timerfd_settime/read
+         - select/poll/epoll
+         
+         
+http://blog.csdn.net/chgaowei/article/details/21295811
