@@ -97,9 +97,11 @@ void Timer::start()
 			if(pfd.revents == POLLIN)
 			{
 				
-				s=+ readTimer();
+				readTimer();
 
-				cout<<s<<endl;
+				srand(time(NULL));
+				int num = rand()%100;
+				cout<<"produce a num: "<<num<<endl;
 				
 			}
 		}

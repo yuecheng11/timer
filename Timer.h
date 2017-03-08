@@ -8,7 +8,7 @@
 #include <unistd.h>
 #include <sys/poll.h>
 #include <time.h>
-class Timer:Noncopyable
+class Timer
 {
 public:
 	Timer();

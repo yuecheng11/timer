@@ -1,5 +1,7 @@
 #include <iostream>
-#include "Timer.h"
+#include <time.h>
+#include "TimeThread.h"
+//#include "Thread.h"
 using namespace std;
 
 int main()
@@ -8,8 +10,16 @@ int main()
 	Timer timeObj;
 	timeObj.Create_timer();
 	timeObj.Set_timer(3,6);//第一次等三秒开始打印，以后周期性5秒打印一次
-	timeObj.start();
 
-	timeObj.stop_timer();
+	Thread* pthread = new ThreadRun(timeObj);
+	
+	ThreadTime pthTime(timeObj,*pthread);
+	
+	//timeObj.start();
+	pthTime.start();
+
+	sleep(20);
+	
+	pthTime.stop();
 	return 0;
 }
